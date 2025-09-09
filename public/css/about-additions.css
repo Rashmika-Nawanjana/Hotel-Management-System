@@ -1,0 +1,209 @@
+/* Additional styles specific to About page */
+
+.bg-purple {
+    background-color: #8B5CF6 !important;
+}
+
+.text-purple {
+    color: #8B5CF6 !important;
+}
+
+.hero-about {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1E40AF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--success-color), var(--warning-color), var(--info-color), #8B5CF6);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: 52%;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 52%;
+    margin-right: 0;
+    text-align: left;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.timeline-card {
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Value Cards */
+.value-card {
+    padding: 2rem 1rem;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    transition: var(--transition);
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1);
+}
+
+/* Team Cards */
+.team-card {
+    padding: 1.5rem;
+}
+
+.team-avatar {
+    transition: var(--transition);
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Award Cards */
+.award-card {
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.award-icon i {
+    transition: var(--transition);
+}
+
+/* Location Cards */
+.location-features small {
+    font-size: 0.875rem;
+}
+
+/* Animation Classes */
+.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 50px;
+        margin-right: 0;
+        text-align: left;
+    }
+    
+    .timeline-marker {
+        left: 20px;
+    }
+    
+    .timeline-card {
+        margin-left: 0 !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .hero-about .display-4 {
+        font-size: 2rem;
+    }
+    
+    .value-card,
+    .team-card {
+        padding: 1rem;
+    }
+    
+    .icon-circle,
+    .value-icon,
+    .team-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}

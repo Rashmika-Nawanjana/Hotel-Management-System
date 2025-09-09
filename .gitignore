@@ -1,0 +1,309 @@
+# ===== NODE.JS GITIGNORE =====
+
+# Dependency directories
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+dist
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# ===== LOGS =====
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# ===== DATABASE =====
+# SQLite databases
+*.sqlite
+*.sqlite3
+*.db
+
+# MongoDB dumps
+dump/
+
+# ===== EDITOR/IDE =====
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===== OPERATING SYSTEM =====
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ===== BUILD ARTIFACTS =====
+# Build directories
+build/
+dist/
+out/
+target/
+
+# Webpack
+.webpack/
+
+# Rollup
+rollup.config.js
+
+# ===== TESTING =====
+# Jest
+coverage/
+.nyc_output/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# ===== DEPLOYMENT =====
+# Vercel
+.vercel
+
+# Netlify
+.netlify/
+
+# AWS
+.aws/
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+# ===== TEMPORARY FILES =====
+# Temporary folders
+tmp/
+temp/
+
+# Lock files (choose one based on your package manager)
+# Keep yarn.lock if using Yarn
+# package-lock.json
+
+# Keep package-lock.json if using npm
+# yarn.lock
+
+# Keep pnpm-lock.yaml if using pnpm
+# pnpm-lock.yaml
+
+# ===== SECURITY & CREDENTIALS =====
+# Environment variables
+.env*
+!.env.example
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.csr
+
+# AWS credentials
+.aws/
+
+# Google Cloud credentials
+*.json
+!package.json
+!tsconfig.json
+
+# ===== PROJECT SPECIFIC =====
+# Upload directories
+uploads/
+public/uploads/
+
+# Generated documentation
+docs/
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# ===== HOTEL PROJECT SPECIFIC =====
+# Image uploads (if storing locally)
+public/images/uploads/
+public/assets/uploads/
+
+# Invoice/receipt storage (if storing locally)
+storage/invoices/
+storage/receipts/
+
+# Session storage
+sessions/
+
+# Email templates compiled
+email-templates/compiled/
+
+# PDF generation temporary files
+pdf-temp/
+
+# QR codes generated
+qr-codes/
+
+# ===== PACKAGE MANAGER SPECIFIC =====
+# NPM
+npm-debug.log*
+.npm
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# PNPM
+.pnpm-debug.log*
+.pnpm/
+
+# ===== RUNTIME =====
+# PM2
+.pm2/
+
+# Forever
+.forever/
+
+# StrongLoop
+.strong-pm/
+
+# ===== MISC =====
+# MacOS
+*.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ===== END OF GITIGNORE =====

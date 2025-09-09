@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Services - SkyNest Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-cloud text-primary me-2"></i>
+                SkyNest Hotels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-3 ms-2" href="/auth/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="/auth/register">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-primary py-5 mt-5 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-3">Premium Services</h1>
+                    <p class="lead mb-0">
+                        Enhance your stay with our exceptional range of services designed to make 
+                        your experience unforgettable. From dining to wellness, we've got you covered.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="service-stats bg-white bg-opacity-10 rounded p-4">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <h3 class="fw-bold">50+</h3>
+                                <small>Services Available</small>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="fw-bold">24/7</h3>
+                                <small>Customer Support</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <button class="btn btn-primary category-filter active" data-category="all">All Services</button>
+                <button class="btn btn-outline-primary category-filter" data-category="dining">Dining & Bar</button>
+                <button class="btn btn-outline-primary category-filter" data-category="wellness">Wellness & Spa</button>
+                <button class="btn btn-outline-primary category-filter" data-category="business">Business Services</button>
+                <button class="btn btn-outline-primary category-filter" data-category="recreation">Recreation</button>
+                <button class="btn btn-outline-primary category-filter" data-category="transport">Transportation</button>
+                <button class="btn btn-outline-primary category-filter" data-category="personal">Personal Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Signature Services</h2>
+                <p class="text-muted">Experience the finest in hospitality and luxury</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <!-- Room Service -->
+                <div class="col-lg-4 service-card" data-category="dining">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="service-image bg-primary-subtle p-5 text-center">
+                            <i class="fas fa-concierge-bell text-primary" style="font-size: 4rem;"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title fw-bold">24/7 Room Service</h5>
+                                    <p class="text-muted small">Gourmet meals delivered to your room</p>
+                                </div>
+                                <span class="badge bg-success">Popular</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Starting from:</span>
+                                    <span class="fw-bold text-primary">LKR 1,500</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted">Delivery time:</span>
+                                    <span class="fw-bold">15-30 mins</span>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled small mb-3">
+                                <li><i class="fas fa-check text-success me-2"></i>International cuisine</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Local specialties</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Dietary accommodations</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Wine & beverages</li>
+                            </ul>
+                            <button class="btn btn-primary w-100" onclick="requestService('room-service')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spa Services -->
+                <div class="col-lg-4 service-card" data-category="wellness">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="service-image bg-success-subtle p-5 text-center">
+                            <i class="fas fa-spa text-success" style="font-size: 4rem;"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title fw-bold">Luxury Spa & Wellness</h5>
+                                    <p class="text-muted small">Rejuvenate your mind and body</p>
+                                </div>
+                                <span class="badge bg-warning">Premium</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Starting from:</span>
+                                    <span class="fw-bold text-primary">LKR 8,000</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted">Duration:</span>
+                                    <span class="fw-bold">60-120 mins</span>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled small mb-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Professional therapists</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Ayurvedic treatments</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Couples massage</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Wellness packages</li>
+                            </ul>
+                            <button class="btn btn-success w-100" onclick="requestService('spa')">
+                                Book Treatment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Airport Transfer -->
+                <div class="col-lg-4 service-card" data-category="transport">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="service-image bg-info-subtle p-5 text-center">
+                            <i class="fas fa-car text-info" style="font-size: 4rem;"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 class="card-title fw-bold">Airport Transfer</h5>
+                                    <p class="text-muted small">Comfortable transportation service</p>
+                                </div>
+                                <span class="badge bg-info">Available</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Starting from:</span>
+                                    <span class="fw-bold text-primary">LKR 3,500</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted">Advance booking:</span>
+                                    <span class="fw-bold">2 hours</span>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled small mb-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Luxury vehicles</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Professional drivers</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Flight tracking</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Meet & greet service</li>
+                            </ul>
+                            <button class="btn btn-info w-100" onclick="requestService('transfer')">
+                                Book Transfer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Services Grid -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Complete Service Directory</h2>
+                <p class="text-muted">Discover all our available services organized by category</p>
+            </div>
+
+            <div class="row g-4" id="servicesGrid">
+                <!-- Dining & Bar Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="dining">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-utensils text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Fine Dining Restaurant</h6>
+                            <p class="text-muted small">Multi-cuisine restaurant</p>
+                            <div class="text-primary fw-bold">LKR 2,500 - 8,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="dining">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-cocktail text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Rooftop Bar</h6>
+                            <p class="text-muted small">Premium cocktails & wines</p>
+                            <div class="text-primary fw-bold">LKR 800 - 3,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="dining">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-coffee text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Coffee Lounge</h6>
+                            <p class="text-muted small">Premium coffee & pastries</p>
+                            <div class="text-primary fw-bold">LKR 500 - 1,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="dining">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-birthday-cake text-primary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Private Dining</h6>
+                            <p class="text-muted small">Exclusive dining experiences</p>
+                            <div class="text-primary fw-bold">LKR 15,000+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness & Spa Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="wellness">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-dumbbell text-success mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Fitness Center</h6>
+                            <p class="text-muted small">24/7 modern gym facilities</p>
+                            <div class="text-success fw-bold">Complimentary</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="wellness">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-swimming-pool text-success mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Swimming Pool</h6>
+                            <p class="text-muted small">Infinity pool with city view</p>
+                            <div class="text-success fw-bold">Complimentary</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="wellness">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-leaf text-success mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Yoga & Meditation</h6>
+                            <p class="text-muted small">Daily wellness sessions</p>
+                            <div class="text-success fw-bold">LKR 2,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="wellness">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-hot-tub text-success mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Sauna & Steam</h6>
+                            <p class="text-muted small">Relaxation facilities</p>
+                            <div class="text-success fw-bold">LKR 1,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="business">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-users text-warning mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Conference Rooms</h6>
+                            <p class="text-muted small">Fully equipped meeting spaces</p>
+                            <div class="text-warning fw-bold">LKR 5,000/hr</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="business">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-print text-warning mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Business Center</h6>
+                            <p class="text-muted small">Printing, scanning, copying</p>
+                            <div class="text-warning fw-bold">LKR 50/page</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="business">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-wifi text-warning mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">High-Speed Internet</h6>
+                            <p class="text-muted small">Premium WiFi throughout</p>
+                            <div class="text-warning fw-bold">Complimentary</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="business">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-headset text-warning mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Secretarial Services</h6>
+                            <p class="text-muted small">Professional assistance</p>
+                            <div class="text-warning fw-bold">LKR 1,000/hr</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recreation Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="recreation">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-gamepad text-info mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Gaming Lounge</h6>
+                            <p class="text-muted small">Entertainment & games</p>
+                            <div class="text-info fw-bold">LKR 1,000/hr</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="recreation">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-music text-info mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Live Entertainment</h6>
+                            <p class="text-muted small">Live music & shows</p>
+                            <div class="text-info fw-bold">Varies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="recreation">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-map text-info mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Tour Packages</h6>
+                            <p class="text-muted small">Local sightseeing tours</p>
+                            <div class="text-info fw-bold">LKR 8,000+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="recreation">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-camera text-info mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Photography Services</h6>
+                            <p class="text-muted small">Professional photo shoots</p>
+                            <div class="text-info fw-bold">LKR 15,000+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transportation Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="transport">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-taxi text-secondary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">City Taxi Service</h6>
+                            <p class="text-muted small">Local transportation</p>
+                            <div class="text-secondary fw-bold">LKR 500+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="transport">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-bus text-secondary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Shuttle Service</h6>
+                            <p class="text-muted small">Hotel to key locations</p>
+                            <div class="text-secondary fw-bold">LKR 300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="transport">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-car-alt text-secondary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Car Rental</h6>
+                            <p class="text-muted small">Self-drive vehicles</p>
+                            <div class="text-secondary fw-bold">LKR 8,000/day</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="transport">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-plane text-secondary mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Helicopter Transfer</h6>
+                            <p class="text-muted small">Premium air transport</p>
+                            <div class="text-secondary fw-bold">LKR 50,000+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Services -->
+                <div class="col-lg-3 col-md-6 service-item" data-category="personal">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-tshirt text-danger mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Laundry & Dry Cleaning</h6>
+                            <p class="text-muted small">Professional garment care</p>
+                            <div class="text-danger fw-bold">LKR 300/item</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="personal">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-baby text-danger mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Babysitting Service</h6>
+                            <p class="text-muted small">Professional childcare</p>
+                            <div class="text-danger fw-bold">LKR 2,000/hr</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="personal">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-cut text-danger mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Beauty Salon</h6>
+                            <p class="text-muted small">Hair & beauty treatments</p>
+                            <div class="text-danger fw-bold">LKR 3,000+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 service-item" data-category="personal">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-shopping-bag text-danger mb-3" style="font-size: 2.5rem;"></i>
+                            <h6 class="fw-bold">Personal Shopping</h6>
+                            <p class="text-muted small">Concierge shopping service</p>
+                            <div class="text-danger fw-bold">LKR 5,000+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Service Packages</h2>
+                <p class="text-muted">Save more with our curated service bundles</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-header bg-primary text-white text-center py-3">
+                            <h5 class="fw-bold mb-0">Business Traveler</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="display-6 fw-bold text-primary mb-3">LKR 15,000</div>
+                            <p class="text-muted">Perfect for business guests</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Airport transfer (both ways)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business center access</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Meeting room (2 hours)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Express laundry</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Daily breakfast</li>
+                            </ul>
+                            <button class="btn btn-primary w-100" onclick="requestPackage('business')">
+                                Select Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-lg h-100 border-warning">
+                        <div class="card-header bg-warning text-dark text-center py-3">
+                            <h5 class="fw-bold mb-0">Wellness Retreat</h5>
+                            <small class="badge bg-dark">Most Popular</small>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="display-6 fw-bold text-warning mb-3">LKR 25,000</div>
+                            <p class="text-muted">Complete wellness experience</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Full body spa treatment</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Yoga & meditation sessions</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Healthy meal plan</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Fitness training</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wellness consultation</li>
+                            </ul>
+                            <button class="btn btn-warning w-100" onclick="requestPackage('wellness')">
+                                Select Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-header bg-success text-white text-center py-3">
+                            <h5 class="fw-bold mb-0">Family Fun</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="display-6 fw-bold text-success mb-3">LKR 20,000</div>
+                            <p class="text-muted">Entertainment for the whole family</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>City tour package</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gaming lounge access</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Babysitting service (4 hours)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pool activities</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Family photography</li>
+                            </ul>
+                            <button class="btn btn-success w-100" onclick="requestPackage('family')">
+                                Select Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Request Form -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold">Request a Service</h3>
+                                <p class="text-muted">Let us know how we can enhance your stay</p>
+                            </div>
+                            <form id="serviceRequestForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Service Category</label>
+                                        <select class="form-select" name="category" required>
+                                            <option value="">Select Category</option>
+                                            <option value="dining">Dining & Bar</option>
+                                            <option value="wellness">Wellness & Spa</option>
+                                            <option value="business">Business Services</option>
+                                            <option value="recreation">Recreation</option>
+                                            <option value="transport">Transportation</option>
+                                            <option value="personal">Personal Services</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" name="date" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Preferred Time</label>
+                                        <input type="time" class="form-control" name="time" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Number of Guests</label>
+                                        <select class="form-select" name="guests">
+                                            <option value="1">1 Guest</option>
+                                            <option value="2">2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4+ Guests</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Special Requests</label>
+                                        <textarea class="form-control" name="requests" rows="3" placeholder="Any special requirements or preferences..."></textarea>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                                            Submit Request
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-cloud text-primary me-2"></i>
+                        SkyNest Hotels
+                    </h5>
+                    <p class="text-light">Experience luxury and comfort across Sri Lanka's most beautiful destinations.</p>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="/rooms" class="text-light text-decoration-none">Rooms</a></li>
+                        <li><a href="/services" class="text-light text-decoration-none">Services</a></li>
+                        <li><a href="/about" class="text-light text-decoration-none">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Locations</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light">📍 Colombo - Galle Road</li>
+                        <li class="text-light">📍 Kandy - Peradeniya Road</li>
+                        <li class="text-light">📍 Galle - Matara Road</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">24/7 Service Line</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light">📞 +94-11-1234567</li>
+                        <li class="text-light">✉️ services@skynest.lk</li>
+                        <li class="text-light">🕒 Round-the-clock support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/services.js"></script>
+</body>
+</html>

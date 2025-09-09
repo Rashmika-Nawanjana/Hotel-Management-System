@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SkyNest Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-cloud text-primary me-2"></i>
+                SkyNest Hotels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-3 ms-2" href="/auth/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="/auth/register">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-primary py-5 mt-5 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-3">Get in Touch</h1>
+                    <p class="lead mb-0">
+                        We're here to help make your stay exceptional. Contact us for reservations, 
+                        inquiries, or any assistance you need across our three beautiful locations.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info bg-white bg-opacity-10 rounded p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bold mb-3">24/7 Support</h5>
+                            <div class="d-flex align-items-center justify-content-center mb-2">
+                                <i class="fas fa-phone me-2"></i>
+                                <span>+94-11-1234567</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="fas fa-envelope me-2"></i>
+                                <span>info@skynest.lk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6">
+                    <div class="quick-contact-card text-center bg-white rounded shadow-sm p-3 h-100">
+                        <i class="fas fa-phone text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="fw-bold mb-1">Call Us</h6>
+                        <p class="text-muted small mb-2">Speak with our team</p>
+                        <a href="tel:+94111234567" class="btn btn-outline-primary btn-sm">Call Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="quick-contact-card text-center bg-white rounded shadow-sm p-3 h-100">
+                        <i class="fas fa-envelope text-success mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="fw-bold mb-1">Email Us</h6>
+                        <p class="text-muted small mb-2">Send us a message</p>
+                        <a href="mailto:info@skynest.lk" class="btn btn-outline-success btn-sm">Send Email</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="quick-contact-card text-center bg-white rounded shadow-sm p-3 h-100">
+                        <i class="fab fa-whatsapp text-success mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="fw-bold mb-1">WhatsApp</h6>
+                        <p class="text-muted small mb-2">Quick messages</p>
+                        <a href="https://wa.me/94111234567" class="btn btn-outline-success btn-sm" target="_blank">Chat Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="quick-contact-card text-center bg-white rounded shadow-sm p-3 h-100">
+                        <i class="fas fa-calendar text-warning mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="fw-bold mb-1">Book Online</h6>
+                        <p class="text-muted small mb-2">Make a reservation</p>
+                        <a href="/rooms" class="btn btn-outline-warning btn-sm">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <h3 class="fw-bold mb-4">Send us a Message</h3>
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your first name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your last name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+94 XX XXX XXXX">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Preferred Location</label>
+                                    <select class="form-select" id="location" name="location">
+                                        <option value="">Select Location</option>
+                                        <option value="colombo">Colombo</option>
+                                        <option value="kandy">Kandy</option>
+                                        <option value="galle">Galle</option>
+                                        <option value="general">General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" name="subject" required>
+                                        <option value="">Select Subject</option>
+                                        <option value="reservation">Room Reservation</option>
+                                        <option value="services">Service Inquiry</option>
+                                        <option value="events">Events & Functions</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a subject.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Please provide details about your inquiry..." required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide your message.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for special offers and updates
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            I agree to the <a href="#" class="text-primary">Privacy Policy</a> and <a href="#" class="text-primary">Terms of Service</a> *
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            You must agree to the privacy policy.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="contact-info-sidebar">
+                        <!-- General Contact -->
+                        <div class="contact-card bg-white rounded shadow-sm p-4 mb-4">
+                            <h5 class="fw-bold mb-3">
+                                <i class="fas fa-info-circle text-primary me-2"></i>
+                                General Information
+                            </h5>
+                            <div class="contact-item mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Phone</h6>
+                                        <p class="text-muted mb-0">+94-11-1234567</p>
+                                        <small class="text-muted">24/7 Customer Service</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Email</h6>
+                                        <p class="text-muted mb-0">info@skynest.lk</p>
+                                        <small class="text-muted">General inquiries</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-clock text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Response Time</h6>
+                                        <p class="text-muted mb-0">Within 2 hours</p>
+                                        <small class="text-muted">During business hours</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contact -->
+                        <div class="contact-card bg-danger-subtle rounded shadow-sm p-4 mb-4">
+                            <h5 class="fw-bold mb-3 text-danger">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Emergency Contact
+                            </h5>
+                            <p class="text-danger mb-2">
+                                <strong>For urgent matters or emergencies:</strong>
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-phone me-2"></i>
+                                <strong>+94-77-EMERGENCY</strong>
+                            </p>
+                            <small class="text-muted">Available 24/7 for registered guests</small>
+                        </div>
+
+                        <!-- Department Contacts -->
+                        <div class="contact-card bg-white rounded shadow-sm p-4 mb-4">
+                            <h5 class="fw-bold mb-3">
+                                <i class="fas fa-building text-primary me-2"></i>
+                                Department Contacts
+                            </h5>
+                            <div class="department-list">
+                                <div class="department-item d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small">Reservations:</span>
+                                    <a href="mailto:reservations@skynest.lk" class="text-primary small">reservations@skynest.lk</a>
+                                </div>
+                                <div class="department-item d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small">Guest Services:</span>
+                                    <a href="mailto:services@skynest.lk" class="text-primary small">services@skynest.lk</a>
+                                </div>
+                                <div class="department-item d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small">Events & Functions:</span>
+                                    <a href="mailto:events@skynest.lk" class="text-primary small">events@skynest.lk</a>
+                                </div>
+                                <div class="department-item d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small">HR & Careers:</span>
+                                    <a href="mailto:careers@skynest.lk" class="text-primary small">careers@skynest.lk</a>
+                                </div>
+                                <div class="department-item d-flex justify-content-between align-items-center">
+                                    <span class="small">Media & Press:</span>
+                                    <a href="mailto:media@skynest.lk" class="text-primary small">media@skynest.lk</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="contact-card bg-primary-subtle rounded shadow-sm p-4">
+                            <h5 class="fw-bold mb-3">
+                                <i class="fas fa-share-alt text-primary me-2"></i>
+                                Follow Us
+                            </h5>
+                            <p class="text-muted small mb-3">Stay connected for updates and special offers</p>
+                            <div class="social-links d-flex gap-2">
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-info btn-sm">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-sm">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-dark btn-sm">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="btn btn-success btn-sm">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Locations</h2>
+                <p class="text-muted">Visit us at any of our three beautiful properties</p>
+            </div>
+            <div class="row g-4">
+                <!-- Colombo Location -->
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-header bg-primary text-white p-4 text-center">
+                            <i class="fas fa-city mb-2" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mb-0">SkyNest Colombo</h5>
+                            <small>Commercial Capital</small>
+                        </div>
+                        <div class="p-4">
+                            <div class="location-info">
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Address</h6>
+                                        <p class="text-muted mb-0">123 Galle Road, Colombo 03, Sri Lanka</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Direct Line</h6>
+                                        <p class="text-muted mb-0">+94-11-1234567</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-clock text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Check-in / Check-out</h6>
+                                        <p class="text-muted mb-0">3:00 PM / 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-4">
+                                    <i class="fas fa-car text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Parking</h6>
+                                        <p class="text-muted mb-0">Complimentary valet parking</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary flex-fill" onclick="getDirections('colombo')">
+                                    <i class="fas fa-directions me-1"></i>Directions
+                                </button>
+                                <button class="btn btn-primary flex-fill" onclick="callLocation('colombo')">
+                                    <i class="fas fa-phone me-1"></i>Call
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kandy Location -->
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-header bg-success text-white p-4 text-center">
+                            <i class="fas fa-mountain mb-2" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mb-0">SkyNest Kandy</h5>
+                            <small>Cultural Capital</small>
+                        </div>
+                        <div class="p-4">
+                            <div class="location-info">
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-map-marker-alt text-success me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Address</h6>
+                                        <p class="text-muted mb-0">456 Peradeniya Road, Kandy, Sri Lanka</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-phone text-success me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Direct Line</h6>
+                                        <p class="text-muted mb-0">+94-81-1234567</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-clock text-success me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Check-in / Check-out</h6>
+                                        <p class="text-muted mb-0">2:00 PM / 11:00 AM</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-4">
+                                    <i class="fas fa-tree text-success me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Special Feature</h6>
+                                        <p class="text-muted mb-0">Hill country views</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-success flex-fill" onclick="getDirections('kandy')">
+                                    <i class="fas fa-directions me-1"></i>Directions
+                                </button>
+                                <button class="btn btn-success flex-fill" onclick="callLocation('kandy')">
+                                    <i class="fas fa-phone me-1"></i>Call
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galle Location -->
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-header bg-info text-white p-4 text-center">
+                            <i class="fas fa-water mb-2" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mb-0">SkyNest Galle</h5>
+                            <small>Coastal Paradise</small>
+                        </div>
+                        <div class="p-4">
+                            <div class="location-info">
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-map-marker-alt text-info me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Address</h6>
+                                        <p class="text-muted mb-0">789 Matara Road, Galle, Sri Lanka</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-phone text-info me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Direct Line</h6>
+                                        <p class="text-muted mb-0">+94-91-1234567</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-clock text-info me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Check-in / Check-out</h6>
+                                        <p class="text-muted mb-0">3:00 PM / 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-start mb-4">
+                                    <i class="fas fa-umbrella-beach text-info me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Special Feature</h6>
+                                        <p class="text-muted mb-0">Beachfront access</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-info flex-fill" onclick="getDirections('galle')">
+                                    <i class="fas fa-directions me-1"></i>Directions
+                                </button>
+                                <button class="btn btn-info flex-fill" onclick="callLocation('galle')">
+                                    <i class="fas fa-phone me-1"></i>Call
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="text-muted">Quick answers to common questions</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What are your check-in and check-out times?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>Check-in:</strong> 3:00 PM (Colombo & Galle), 2:00 PM (Kandy)<br>
+                                    <strong>Check-out:</strong> 12:00 PM (Colombo & Galle), 11:00 AM (Kandy)<br>
+                                    Early check-in and late check-out may be available upon request, subject to availability.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you offer airport transfer services?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we provide airport transfer services from Bandaranaike International Airport to all our locations. 
+                                    Please book at least 24 hours in advance. Rates vary by location:
+                                    <ul class="mt-2">
+                                        <li>Colombo: LKR 3,500</li>
+                                        <li>Kandy: LKR 8,000</li>
+                                        <li>Galle: LKR 12,000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What is your cancellation policy?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>Standard Rooms:</strong> Free cancellation up to 24 hours before check-in<br>
+                                    <strong>Suites:</strong> Free cancellation up to 48 hours before check-in<br>
+                                    <strong>Peak Season:</strong> 72 hours advance notice required<br>
+                                    Cancellations made after the free cancellation period will incur a charge of one night's stay.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do you allow pets?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We welcome well-behaved pets at all our locations with advance notice. A pet fee of LKR 2,000 per night applies. 
+                                    Please inform us during booking about your pet, and we'll ensure your room is pet-friendly. 
+                                    Service animals are always welcome at no additional charge.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What payment methods do you accept?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept all major credit cards (Visa, MasterCard, American Express), debit cards, 
+                                    bank transfers, and cash (LKR, USD, EUR). Online payments can be made through our 
+                                    secure booking system. A valid credit card is required for incidental charges during your stay.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Ready to Experience SkyNest Hotels?</h2>
+            <p class="lead mb-4">Book your stay today or contact us for personalized assistance</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="/rooms" class="btn btn-light btn-lg px-4">
+                    <i class="fas fa-calendar me-2"></i>Book Now
+                </a>
+                <a href="tel:+94111234567" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-phone me-2"></i>Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-cloud text-primary me-2"></i>
+                        SkyNest Hotels
+                    </h5>
+                    <p class="text-light">Your gateway to luxury hospitality in Sri Lanka.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/rooms" class="text-light text-decoration-none">Rooms</a></li>
+                        <li class="mb-2"><a href="/services" class="text-light text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/about" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light mb-2">📞 +94-11-1234567</li>
+                        <li class="text-light mb-2">✉️ info@skynest.lk</li>
+                        <li class="text-light">🕒 24/7 Support</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-light small">Stay updated with our latest offers</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 SkyNest Hotels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/contact.js"></script>
+</body>
+</html>

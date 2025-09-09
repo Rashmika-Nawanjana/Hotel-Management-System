@@ -1,0 +1,665 @@
+/* Guest Bookings Page Specific Styles */
+
+/* Summary Cards */
+.summary-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.summary-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.summary-content {
+    flex: 1;
+}
+
+.summary-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: #1f2937;
+}
+
+.summary-label {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Booking Filters */
+.booking-filters {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-filters .nav-pills .nav-link {
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    margin-right: 0.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.booking-filters .nav-pills .nav-link.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.booking-filters .nav-pills .nav-link:not(.active) {
+    color: #6b7280;
+    background: #f8f9fa;
+}
+
+.booking-filters .nav-pills .nav-link:not(.active):hover {
+    background: #e9ecef;
+    color: var(--primary-color);
+}
+
+/* Booking Cards */
+.bookings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.booking-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Booking Header */
+.booking-header {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.status-confirmed {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-current {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.status-completed {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.booking-actions-header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Rating Display */
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-stars {
+    color: #fbbf24;
+    font-size: 1.1rem;
+}
+
+.rating-text {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Booking Content */
+.booking-content {
+    padding: 1.5rem;
+}
+
+.hotel-image {
+    height: 80px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.booking-details {
+    padding-left: 1rem;
+}
+
+.hotel-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.room-type {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.booking-dates {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.booking-ref {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+/* Booking Info */
+.booking-info {
+    padding-left: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Booking Pricing */
+.booking-pricing {
+    text-align: right;
+    padding-left: 1rem;
+}
+
+.total-amount {
+    margin-bottom: 1rem;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    display: block;
+}
+
+.amount-label {
+    font-size: 0.85rem;
+    color: #6b7280;
+    display: block;
+}
+
+.payment-status .badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Booking Footer */
+.booking-footer {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.booking-countdown {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.countdown-text {
+    font-weight: 600;
+}
+
+.payment-reminder {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.repeat-booking {
+    display: flex;
+    align-items: center;
+}
+
+/* Special Booking Card States */
+.current-booking {
+    border-left: 4px solid #2563eb;
+}
+
+.current-booking .booking-header {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.upcoming-booking {
+    border-left: 4px solid #16a34a;
+}
+
+.past-booking {
+    opacity: 0.9;
+}
+
+.past-booking .booking-header {
+    background: #f9fafb;
+}
+
+/* Quick Actions Overlay (Mobile) */
+.quick-actions-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    background: linear-gradient(to left, rgba(59, 130, 246, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.quick-actions-overlay .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* Filter Modal Enhancements */
+#filterModal .modal-content {
+    border-radius: 1rem;
+}
+
+#filterModal .form-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+#filterModal .form-control,
+#filterModal .form-select {
+    border-radius: 0.5rem;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+#filterModal .form-control:focus,
+#filterModal .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Empty States */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6b7280;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h5 {
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.booking-card.loading {
+    pointer-events: none;
+}
+
+.booking-card.loading .booking-content {
+    opacity: 0.7;
+}
+
+/* Notification Styles */
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .booking-card .row > div {
+        margin-bottom: 1rem;
+    }
+    
+    .booking-pricing {
+        text-align: left;
+        padding-left: 0;
+    }
+    
+    .booking-details {
+        padding-left: 0;
+    }
+    
+    .booking-info {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .summary-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .summary-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .booking-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .booking-actions-header {
+        justify-content: center;
+    }
+    
+    .booking-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .booking-footer .row {
+        flex-direction: column;
+    }
+    
+    .booking-footer .text-md-end {
+        text-align: center !important;
+    }
+    
+    .hotel-image {
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .booking-filters .nav-pills {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .booking-filters .nav-pills .nav-link {
+        margin-right: 0;
+        flex: 1;
+        text-align: center;
+        min-width: calc(50% - 0.25rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header .row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .page-header .text-lg-end {
+        text-align: center !important;
+    }
+    
+    .summary-number {
+        font-size: 1.5rem;
+    }
+    
+    .booking-content {
+        padding: 1rem;
+    }
+    
+    .booking-header,
+    .booking-footer {
+        padding: 1rem;
+    }
+    
+    .hotel-name {
+        font-size: 1.1rem;
+    }
+    
+    .amount {
+        font-size: 1.25rem;
+    }
+    
+    .quick-actions {
+        justify-content: center;
+    }
+    
+    .booking-filters .nav-pills .nav-link {
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .booking-actions-header,
+    .booking-footer,
+    .booking-filters,
+    .page-header .col-lg-4,
+    .sidebar,
+    .mobile-bottom-nav {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .booking-card {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .booking-header {
+        background: #f5f5f5 !important;
+    }
+}
+
+/* Accessibility Improvements */
+.booking-card:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.booking-actions-header .btn:focus,
+.quick-actions .btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .booking-card {
+        border: 2px solid #000;
+    }
+    
+    .booking-status-badge {
+        border: 1px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .booking-card,
+    .summary-card,
+    .booking-filters .nav-pills .nav-link {
+        transition: none;
+    }
+    
+    .loading-skeleton {
+        animation: none;
+        background: #f0f0f0;
+    }
+}
+
+/* Dark mode support (if implemented) */
+@media (prefers-color-scheme: dark) {
+    .booking-card,
+    .summary-card,
+    .booking-filters {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    
+    .booking-header,
+    .booking-footer {
+        background: #111827;
+        border-color: #374151;
+    }
+    
+    .hotel-name,
+    .summary-number {
+        color: #f9fafb;
+    }
+    
+    .room-type,
+    .summary-label,
+    .info-item {
+        color: #d1d5db;
+    }
+}
+
+/* Custom scrollbar for booking container */
+.bookings-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bookings-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.bookings-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.bookings-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for new bookings */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.booking-card.new-booking {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+/* Success states */
+.booking-card.success-state {
+    border-left-color: #10b981;
+    background: linear-gradient(to right, #ecfdf5, #ffffff);
+}
+
+.booking-card.success-state .booking-header {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}

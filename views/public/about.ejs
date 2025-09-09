@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SkyNest Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-cloud text-primary me-2"></i>
+                SkyNest Hotels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-3 ms-2" href="/auth/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="/auth/register">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about bg-gradient-primary py-5 mt-5 text-white">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Our Story</h1>
+                    <p class="lead mb-4">
+                        Since 2010, SkyNest Hotels has been redefining luxury hospitality in Sri Lanka. 
+                        We believe that every journey deserves an extraordinary stay, where comfort meets 
+                        elegance and service excellence is our standard.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#vision" class="btn btn-light btn-lg">Our Vision</a>
+                        <a href="#locations" class="btn btn-outline-light btn-lg">Our Locations</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-stats bg-white bg-opacity-10 rounded-3 p-4">
+                        <div class="row text-center g-3">
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h2 class="fw-bold mb-1">14+</h2>
+                                    <p class="mb-0">Years of Excellence</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h2 class="fw-bold mb-1">50,000+</h2>
+                                    <p class="mb-0">Happy Guests</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h2 class="fw-bold mb-1">98%</h2>
+                                    <p class="mb-0">Satisfaction Rate</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h2 class="fw-bold mb-1">24/7</h2>
+                                    <p class="mb-0">Guest Service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vision" class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="vision-card h-100">
+                        <div class="text-center mb-4">
+                            <div class="icon-circle bg-primary-subtle mb-3">
+                                <i class="fas fa-eye text-primary" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="fw-bold">Our Vision</h3>
+                        </div>
+                        <p class="lead text-center mb-4">
+                            To become Sri Lanka's most beloved luxury hotel brand, known for creating 
+                            unforgettable experiences that celebrate the beauty of our island nation.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-star text-warning me-3"></i>
+                                Setting new standards in luxury hospitality
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-heart text-danger me-3"></i>
+                                Creating emotional connections with our guests
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-globe text-success me-3"></i>
+                                Showcasing Sri Lankan culture and heritage
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mission-card h-100">
+                        <div class="text-center mb-4">
+                            <div class="icon-circle bg-success-subtle mb-3">
+                                <i class="fas fa-bullseye text-success" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="fw-bold">Our Mission</h3>
+                        </div>
+                        <p class="lead text-center mb-4">
+                            To provide exceptional hospitality experiences through personalized service, 
+                            luxurious accommodations, and authentic Sri Lankan warmth.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-users text-primary me-3"></i>
+                                Delivering personalized guest experiences
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-leaf text-success me-3"></i>
+                                Promoting sustainable tourism practices
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-handshake text-info me-3"></i>
+                                Supporting local communities and culture
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Timeline -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Journey Through Time</h2>
+                <p class="text-muted">Milestones that shaped our legacy</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker bg-primary"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card bg-white shadow-sm rounded p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-primary mb-0">2010</h5>
+                                <span class="badge bg-primary">Foundation</span>
+                            </div>
+                            <h6 class="fw-bold">SkyNest Hotels Founded</h6>
+                            <p class="text-muted mb-0">
+                                Started with our flagship property in Colombo, bringing a new vision 
+                                of luxury hospitality to Sri Lanka's commercial capital.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker bg-success"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card bg-white shadow-sm rounded p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-success mb-0">2015</h5>
+                                <span class="badge bg-success">Expansion</span>
+                            </div>
+                            <h6 class="fw-bold">Kandy Branch Opening</h6>
+                            <p class="text-muted mb-0">
+                                Expanded to the cultural capital with our Kandy property, offering 
+                                guests a perfect blend of heritage and modern luxury.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker bg-warning"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card bg-white shadow-sm rounded p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-warning mb-0">2018</h5>
+                                <span class="badge bg-warning">Recognition</span>
+                            </div>
+                            <h6 class="fw-bold">Excellence Awards</h6>
+                            <p class="text-muted mb-0">
+                                Received multiple hospitality excellence awards and achieved 
+                                98% guest satisfaction rating across all properties.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker bg-info"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card bg-white shadow-sm rounded p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-info mb-0">2020</h5>
+                                <span class="badge bg-info">Coastal Expansion</span>
+                            </div>
+                            <h6 class="fw-bold">Galle Coastal Resort</h6>
+                            <p class="text-muted mb-0">
+                                Opened our stunning coastal property in Galle, combining 
+                                beachfront luxury with historical charm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker bg-purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card bg-white shadow-sm rounded p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-purple mb-0">2024</h5>
+                                <span class="badge bg-purple">Digital Innovation</span>
+                            </div>
+                            <h6 class="fw-bold">Smart Hotel Initiative</h6>
+                            <p class="text-muted mb-0">
+                                Launched comprehensive digital transformation with smart rooms, 
+                                mobile check-in, and AI-powered guest services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Core Values</h2>
+                <p class="text-muted">The principles that guide everything we do</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center h-100">
+                        <div class="value-icon bg-primary-subtle rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-heart text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Hospitality Excellence</h5>
+                        <p class="text-muted">
+                            We believe genuine care and attention to detail create 
+                            memorable experiences that exceed expectations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center h-100">
+                        <div class="value-icon bg-success-subtle rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-leaf text-success" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Sustainability</h5>
+                        <p class="text-muted">
+                            Committed to protecting Sri Lanka's natural beauty through 
+                            eco-friendly practices and responsible tourism.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center h-100">
+                        <div class="value-icon bg-warning-subtle rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-users text-warning" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Community Impact</h5>
+                        <p class="text-muted">
+                            Supporting local communities, artisans, and businesses 
+                            to create positive economic and social impact.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center h-100">
+                        <div class="value-icon bg-info-subtle rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-lightbulb text-info" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Innovation</h5>
+                        <p class="text-muted">
+                            Embracing technology and creative solutions to enhance 
+                            guest experiences and operational efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations -->
+    <section id="locations" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Distinctive Locations</h2>
+                <p class="text-muted">Three unique destinations, one exceptional standard</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-image bg-primary-subtle d-flex align-items-center justify-content-center" style="height: 250px;">
+                            <i class="fas fa-city text-primary" style="font-size: 5rem;"></i>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">Colombo - Commercial Hub</h5>
+                            <p class="text-muted mb-3">
+                                Located in the heart of Sri Lanka's commercial capital, our Colombo property 
+                                offers easy access to business districts, shopping, and cultural attractions.
+                            </p>
+                            <div class="location-features">
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-building text-primary me-2"></i>Downtown Location
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-plane text-primary me-2"></i>Airport 45 mins
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-briefcase text-primary me-2"></i>Business District
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-shopping-bag text-primary me-2"></i>Shopping Centers
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">20 Rooms Available</span>
+                                <a href="/contact" class="btn btn-outline-primary btn-sm">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-image bg-success-subtle d-flex align-items-center justify-content-center" style="height: 250px;">
+                            <i class="fas fa-mountain text-success" style="font-size: 5rem;"></i>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">Kandy - Cultural Capital</h5>
+                            <p class="text-muted mb-3">
+                                Nestled in the hills surrounding the sacred city of Kandy, experience 
+                                the perfect blend of cultural heritage and natural beauty.
+                            </p>
+                            <div class="location-features">
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-tree text-success me-2"></i>Hill Country Views
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-landmark text-success me-2"></i>Temple of Tooth
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-leaf text-success me-2"></i>Botanical Gardens
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-water text-success me-2"></i>Kandy Lake
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning">15 Rooms Available</span>
+                                <a href="/contact" class="btn btn-outline-success btn-sm">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="location-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="location-image bg-info-subtle d-flex align-items-center justify-content-center" style="height: 250px;">
+                            <i class="fas fa-water text-info" style="font-size: 5rem;"></i>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">Galle - Coastal Paradise</h5>
+                            <p class="text-muted mb-3">
+                                Discover the magic of Sri Lanka's southern coast with our beachfront 
+                                property that combines colonial charm with modern luxury.
+                            </p>
+                            <div class="location-features">
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-umbrella-beach text-info me-2"></i>Beachfront Access
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-fort-awesome text-info me-2"></i>Historic Fort
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-fish text-info me-2"></i>Fresh Seafood
+                                        </small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="d-flex align-items-center">
+                                            <i class="fas fa-sunset text-info me-2"></i>Sunset Views
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">18 Rooms Available</span>
+                                <a href="/contact" class="btn btn-outline-info btn-sm">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Meet Our Leadership Team</h2>
+                <p class="text-muted">Experienced professionals dedicated to excellence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-avatar bg-primary-subtle rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="fas fa-user text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1">Priyanka Silva</h5>
+                        <p class="text-primary mb-2">Chief Executive Officer</p>
+                        <p class="text-muted small mb-3">
+                            15+ years in luxury hospitality management with a passion for 
+                            creating exceptional guest experiences.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-avatar bg-success-subtle rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="fas fa-user text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1">Rohan Perera</h5>
+                        <p class="text-success mb-2">General Manager</p>
+                        <p class="text-muted small mb-3">
+                            Hospitality veteran with expertise in operations management 
+                            and team leadership across multiple properties.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-avatar bg-warning-subtle rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="fas fa-user text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1">Kamani Fernando</h5>
+                        <p class="text-warning mb-2">Head of Guest Services</p>
+                        <p class="text-muted small mb-3">
+                            Customer experience specialist ensuring every guest 
+                            receives personalized and memorable service.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-avatar bg-info-subtle rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="fas fa-user text-info" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1">Nuwan Jayasinghe</h5>
+                        <p class="text-info mb-2">Executive Chef</p>
+                        <p class="text-muted small mb-3">
+                            Award-winning culinary artist bringing international 
+                            flavors and local traditions to our dining experiences.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="text-muted me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-muted me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Awards & Recognition</h2>
+                <p class="text-muted">Celebrating our commitment to excellence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="award-card text-center bg-white rounded shadow-sm p-4 h-100">
+                        <div class="award-icon mb-3">
+                            <i class="fas fa-trophy text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="fw-bold">Best Luxury Hotel</h6>
+                        <p class="text-muted small mb-2">Sri Lanka Tourism Awards 2023</p>
+                        <span class="badge bg-warning">Gold Winner</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="award-card text-center bg-white rounded shadow-sm p-4 h-100">
+                        <div class="award-icon mb-3">
+                            <i class="fas fa-star text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="fw-bold">Excellence in Service</h6>
+                        <p class="text-muted small mb-2">TripAdvisor Travelers' Choice 2023</p>
+                        <span class="badge bg-primary">Top 10</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="award-card text-center bg-white rounded shadow-sm p-4 h-100">
+                        <div class="award-icon mb-3">
+                            <i class="fas fa-leaf text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="fw-bold">Sustainable Tourism</h6>
+                        <p class="text-muted small mb-2">Green Hotel Certification 2023</p>
+                        <span class="badge bg-success">Certified</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="award-card text-center bg-white rounded shadow-sm p-4 h-100">
+                        <div class="award-icon mb-3">
+                            <i class="fas fa-heart text-danger" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="fw-bold">Guest Satisfaction</h6>
+                        <p class="text-muted small mb-2">Booking.com Guest Review 2023</p>
+                        <span class="badge bg-danger">9.8/10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Experience the SkyNest Difference</h2>
+            <p class="lead mb-4">
+                Join thousands of satisfied guests who have made SkyNest Hotels their home away from home.
+            </p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="/rooms" class="btn btn-light btn-lg px-4">
+                    <i class="fas fa-bed me-2"></i>Book Your Stay
+                </a>
+                <a href="/contact" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-phone me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-cloud text-primary me-2"></i>
+                        SkyNest Hotels
+                    </h5>
+                    <p class="text-light">Redefining luxury hospitality in Sri Lanka since 2010.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/rooms" class="text-light text-decoration-none">Rooms</a></li>
+                        <li class="mb-2"><a href="/services" class="text-light text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/about" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Our Locations</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light mb-2">📍 Colombo - Commercial Hub</li>
+                        <li class="text-light mb-2">📍 Kandy - Cultural Capital</li>
+                        <li class="text-light">📍 Galle - Coastal Paradise</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light mb-2">📞 +94-11-1234567</li>
+                        <li class="text-light mb-2">✉️ info@skynest.lk</li>
+                        <li class="text-light">🕒 24/7 Guest Services</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 SkyNest Hotels. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/about.js"></script>
+</body>
+</html>

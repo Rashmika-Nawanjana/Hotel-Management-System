@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SkyNest Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/admin/dashboard">
+                <i class="fas fa-cloud text-primary me-2"></i>
+                SkyNest Admin
+            </a>
+            
+            <!-- Quick Actions -->
+            <div class="navbar-nav flex-row d-none d-lg-flex me-auto ms-4">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="quickActionsDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-bolt me-1"></i>Quick Actions
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="quickCheckIn()"><i class="fas fa-key me-2"></i>Quick Check-in</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="emergencyAlert()"><i class="fas fa-exclamation-triangle me-2"></i>Emergency Alert</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="maintenanceMode()"><i class="fas fa-tools me-2"></i>Maintenance Mode</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" onclick="generateReport()"><i class="fas fa-chart-line me-2"></i>Generate Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <!-- Notifications -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge bg-danger notification-badge">5</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end notification-dropdown">
+                            <li class="dropdown-header">System Notifications</li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="notification-item">
+                                        <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                                        <div>
+                                            <strong>Room 205 Maintenance</strong>
+                                            <small class="text-muted d-block">AC unit requires attention</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="notification-item">
+                                        <i class="fas fa-user-clock text-info me-2"></i>
+                                        <div>
+                                            <strong>Late Checkout Request</strong>
+                                            <small class="text-muted d-block">Guest in Room 312 - Approved</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="notification-item">
+                                        <i class="fas fa-credit-card text-success me-2"></i>
+                                        <div>
+                                            <strong>Payment Received</strong>
+                                            <small class="text-muted d-block">Booking BK001 - LKR 42,000</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="/admin/notifications">View All Notifications</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- User Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center text-white" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="admin-avatar me-2">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <span class="d-none d-lg-inline">Priyanka Silva</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <strong>Priyanka Silva</strong><br>
+                                <small class="text-muted">Hotel Manager</small>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/admin/profile"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                            <li><a class="dropdown-item" href="/admin/settings"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><a class="dropdown-item" href="/admin/activity-log"><i class="fas fa-history me-2"></i>Activity Log</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-content">
+                <!-- Hotel Selection -->
+                <div class="hotel-selector p-3 border-bottom">
+                    <label class="form-label text-white small">Current Hotel</label>
+                    <select class="form-select form-select-sm" id="hotelSelector">
+                        <option value="all">All Properties</option>
+                        <option value="colombo" selected>SkyNest Colombo</option>
+                        <option value="kandy">SkyNest Kandy</option>
+                        <option value="galle">SkyNest Galle</option>
+                    </select>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="admin-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/admin/dashboard">
+                                <i class="fas fa-tachometer-alt me-3"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/bookings">
+                                <i class="fas fa-calendar-alt me-3"></i>Bookings
+                                <span class="badge bg-primary ms-auto">12</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/rooms">
+                                <i class="fas fa-bed me-3"></i>Room Management
+                                <span class="badge bg-warning ms-auto">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/guests">
+                                <i class="fas fa-users me-3"></i>Guest Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/services">
+                                <i class="fas fa-concierge-bell me-3"></i>Service Requests
+                                <span class="badge bg-success ms-auto">7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/housekeeping">
+                                <i class="fas fa-broom me-3"></i>Housekeeping
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/maintenance">
+                                <i class="fas fa-tools me-3"></i>Maintenance
+                                <span class="badge bg-danger ms-auto">2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/billing">
+                                <i class="fas fa-receipt me-3"></i>Billing & Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/reports">
+                                <i class="fas fa-chart-bar me-3"></i>Reports & Analytics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/staff">
+                                <i class="fas fa-user-tie me-3"></i>Staff Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/settings">
+                                <i class="fas fa-cog me-3"></i>System Settings
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <div class="container-fluid p-4">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h1 class="h3 fw-bold mb-2">Dashboard Overview</h1>
+                            <p class="text-muted mb-0">Welcome back, Priyanka. Here's what's happening at SkyNest Colombo today.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <div class="dashboard-date">
+                                <div class="current-time fw-bold" id="currentTime">09:15 AM</div>
+                                <div class="current-date text-muted">Monday, December 11, 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card occupancy">
+                            <div class="metric-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3 class="metric-number">87%</h3>
+                                <p class="metric-label">Occupancy Rate</p>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i> +5.2%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card revenue">
+                            <div class="metric-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3 class="metric-number">2.1M</h3>
+                                <p class="metric-label">Today's Revenue</p>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i> +12.5%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card guests">
+                            <div class="metric-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3 class="metric-number">156</h3>
+                                <p class="metric-label">Active Guests</p>
+                                <div class="metric-change neutral">
+                                    <i class="fas fa-minus"></i> 0%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card satisfaction">
+                            <div class="metric-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3 class="metric-number">4.8</h3>
+                                <p class="metric-label">Guest Satisfaction</p>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i> +0.3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real-time Operations -->
+                <div class="row g-4 mb-4">
+                    <!-- Today's Operations -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="fw-bold mb-0">Today's Operations</h5>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <input type="radio" class="btn-check" name="operationsView" id="checkInsView" checked>
+                                        <label class="btn btn-outline-primary" for="checkInsView">Check-ins</label>
+                                        
+                                        <input type="radio" class="btn-check" name="operationsView" id="checkOutsView">
+                                        <label class="btn btn-outline-primary" for="checkOutsView">Check-outs</label>
+                                        
+                                        <input type="radio" class="btn-check" name="operationsView" id="maintenanceView">
+                                        <label class="btn btn-outline-primary" for="maintenanceView">Maintenance</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <!-- Check-ins View -->
+                                <div id="checkInsContent" class="operations-content">
+                                    <div class="operation-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">
+                                                <div class="guest-info">
+                                                    <div class="guest-avatar">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="guest-details">
+                                                        <h6 class="guest-name">John Smith</h6>
+                                                        <p class="guest-type">Business Guest</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="booking-info">
+                                                    <p class="room-number">Room 205</p>
+                                                    <p class="room-type">Premium Double</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="timing-info">
+                                                    <p class="checkin-time">Expected: 3:00 PM</p>
+                                                    <p class="stay-duration">3 nights</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="operation-actions">
+                                                    <button class="btn btn-sm btn-success" onclick="processCheckIn('BK001')">
+                                                        <i class="fas fa-key me-1"></i>Check In
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewGuest('BK001')">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="operation-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">
+                                                <div class="guest-info">
+                                                    <div class="guest-avatar">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="guest-details">
+                                                        <h6 class="guest-name">Sarah Johnson</h6>
+                                                        <p class="guest-type">Leisure Guest</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="booking-info">
+                                                    <p class="room-number">Room 314</p>
+                                                    <p class="room-type">Executive Suite</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="timing-info">
+                                                    <p class="checkin-time">Expected: 4:30 PM</p>
+                                                    <p class="stay-duration">2 nights</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="operation-actions">
+                                                    <button class="btn btn-sm btn-success" onclick="processCheckIn('BK002')">
+                                                        <i class="fas fa-key me-1"></i>Check In
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewGuest('BK002')">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="operation-item border-bottom-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">
+                                                <div class="guest-info">
+                                                    <div class="guest-avatar vip">
+                                                        <i class="fas fa-crown"></i>
+                                                    </div>
+                                                    <div class="guest-details">
+                                                        <h6 class="guest-name">Michael Chen</h6>
+                                                        <p class="guest-type">VIP Guest</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="booking-info">
+                                                    <p class="room-number">Suite 501</p>
+                                                    <p class="room-type">Presidential Suite</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="timing-info">
+                                                    <p class="checkin-time">Expected: 6:00 PM</p>
+                                                    <p class="stay-duration">5 nights</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="operation-actions">
+                                                    <button class="btn btn-sm btn-warning" onclick="vipCheckIn('BK003')">
+                                                        <i class="fas fa-star me-1"></i>VIP Check In
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewGuest('BK003')">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Check-outs View -->
+                                <div id="checkOutsContent" class="operations-content d-none">
+                                    <div class="operation-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">
+                                                <div class="guest-info">
+                                                    <div class="guest-avatar">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="guest-details">
+                                                        <h6 class="guest-name">David Wilson</h6>
+                                                        <p class="guest-type">Business Guest</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="booking-info">
+                                                    <p class="room-number">Room 102</p>
+                                                    <p class="room-type">Deluxe Single</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="timing-info">
+                                                    <p class="checkout-time">Due: 12:00 PM</p>
+                                                    <p class="billing-status text-success">Paid</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="operation-actions">
+                                                    <button class="btn btn-sm btn-danger" onclick="processCheckOut('CH001')">
+                                                        <i class="fas fa-sign-out-alt me-1"></i>Check Out
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewBill('CH001')">
+                                                        <i class="fas fa-receipt me-1"></i>Bill
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Maintenance View -->
+                                <div id="maintenanceContent" class="operations-content d-none">
+                                    <div class="operation-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">
+                                                <div class="maintenance-info">
+                                                    <div class="maintenance-icon">
+                                                        <i class="fas fa-exclamation-triangle text-warning"></i>
+                                                    </div>
+                                                    <div class="maintenance-details">
+                                                        <h6 class="issue-title">AC Unit Issue</h6>
+                                                        <p class="issue-priority">High Priority</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="room-info">
+                                                    <p class="room-number">Room 205</p>
+                                                    <p class="room-status">Out of Order</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="timing-info">
+                                                    <p class="reported-time">Reported: 8:30 AM</p>
+                                                    <p class="assigned-to">Tech: Mark Johnson</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="operation-actions">
+                                                    <button class="btn btn-sm btn-warning" onclick="updateMaintenance('MT001')">
+                                                        <i class="fas fa-tools me-1"></i>Update
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewMaintenance('MT001')">
+                                                        <i class="fas fa-eye me-1"></i>Details
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="fw-bold mb-0">Quick Stats</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="quick-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Rooms Available</h6>
+                                            <p class="stat-value">8 / 60</p>
+                                        </div>
+                                        <div class="stat-visual">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" style="width: 87%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="stat-item">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Pending Check-ins</h6>
+                                            <p class="stat-value">12</p>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="fas fa-clock text-warning"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="stat-item">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Service Requests</h6>
+                                            <p class="stat-value">7</p>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="fas fa-concierge-bell text-info"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="stat-item">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Maintenance Issues</h6>
+                                            <p class="stat-value">2</p>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="fas fa-tools text-danger"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="stat-item">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Staff on Duty</h6>
+                                            <p class="stat-value">24</p>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="fas fa-users text-success"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="stat-item border-bottom-0">
+                                        <div class="stat-info">
+                                            <h6 class="stat-title">Today's Revenue</h6>
+                                            <p class="stat-value">LKR 2.1M</p>
+                                        </div>
+                                        <div class="stat-trend positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & System Status -->
+                <div class="row g-4 mb-4">
+                    <!-- Recent Activity -->
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="fw-bold mb-0">Recent Activity</h5>
+                                    <a href="/admin/activity-log" class="text-primary text-decoration-none">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="activity-timeline">
+                                    <div class="activity-item">
+                                        <div class="activity-time">2 min ago</div>
+                                        <div class="activity-content">
+                                            <div class="activity-icon bg-success">
+                                                <i class="fas fa-key"></i>
+                                            </div>
+                                            <div class="activity-details">
+                                                <p class="activity-title">Guest Check-in Completed</p>
+                                                <p class="activity-description">Room 108 - John Smith</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <div class="activity-time">15 min ago</div>
+                                        <div class="activity-content">
+                                            <div class="activity-icon bg-warning">
+                                                <i class="fas fa-tools"></i>
+                                            </div>
+                                            <div class="activity-details">
+                                                <p class="activity-title">Maintenance Request</p>
+                                                <p class="activity-description">Room 205 - AC repair needed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <div class="activity-time">32 min ago</div>
+                                        <div class="activity-content">
+                                            <div class="activity-icon bg-primary">
+                                                <i class="fas fa-credit-card"></i>
+                                            </div>
+                                            <div class="activity-details">
+                                                <p class="activity-title">Payment Received</p>
+                                                <p class="activity-description">Booking BK001 - LKR 42,000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <div class="activity-time">1 hour ago</div>
+                                        <div class="activity-content">
+                                            <div class="activity-icon bg-info">
+                                                <i class="fas fa-concierge-bell"></i>
+                                            </div>
+                                            <div class="activity-details">
+                                                <p class="activity-title">Service Request</p>
+                                                <p class="activity-description">Room 312 - Extra towels delivered</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-item border-bottom-0">
+                                        <div class="activity-time">2 hours ago</div>
+                                        <div class="activity-content">
+                                            <div class="activity-icon bg-danger">
+                                                <i class="fas fa-sign-out-alt"></i>
+                                            </div>
+                                            <div class="activity-details">
+                                                <p class="activity-title">Guest Check-out</p>
+                                                <p class="activity-description">Room 201 - Sarah Wilson</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="fw-bold mb-0">System Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="system-status">
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h6 class="status-title">Hotel Management System</h6>
+                                            <p class="status-description">All services operational</p>
+                                        </div>
+                                        <div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Online</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h6 class="status-title">Payment Gateway</h6>
+                                            <p class="status-description">Processing payments normally</p>
+                                        </div>
+                                        <div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Online</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h6 class="status-title">Key Card System</h6>
+                                            <p class="status-description">Digital keys functioning</p>
+                                        </div>
+                                        <div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Online</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h6 class="status-title">WiFi Network</h6>
+                                            <p class="status-description">Guest network stable</p>
+                                        </div>
+                                        <div class="status-indicator warning">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Limited</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h6 class="status-title">Backup Systems</h6>
+                                            <p class="status-description">Last backup: 3:00 AM</p>
+                                        </div>
+                                        <div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Active</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="status-item border-bottom-0">
+                                        <div class="status-info">
+                                            <h6 class="status-title">Security System</h6>
+                                            <p class="status-description">All cameras operational</p>
+                                        </div>
+                                        <div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Secure</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="row g-4">
+                    <!-- Revenue Chart -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="fw-bold mb-0">Revenue Analytics</h5>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <input type="radio" class="btn-check" name="revenueperiod" id="today" checked>
+                                        <label class="btn btn-outline-primary" for="today">Today</label>
+                                        
+                                        <input type="radio" class="btn-check" name="revenueperiod" id="week">
+                                        <label class="btn btn-outline-primary" for="week">Week</label>
+                                        
+                                        <input type="radio" class="btn-check" name="revenueperiod" id="month">
+                                        <label class="btn btn-outline-primary" for="month">Month</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <canvas id="revenueChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Occupancy Breakdown -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="fw-bold mb-0">Room Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="room-status-chart">
+                                    <canvas id="occupancyChart" height="200"></canvas>
+                                </div>
+                                <div class="room-status-legend mt-3">
+                                    <div class="legend-item">
+                                        <span class="legend-color occupied"></span>
+                                        <span class="legend-text">Occupied (52)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color available"></span>
+                                        <span class="legend-text">Available (8)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color maintenance"></span>
+                                        <span class="legend-text">Maintenance (3)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color cleaning"></span>
+                                        <span class="legend-text">Cleaning (5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>
